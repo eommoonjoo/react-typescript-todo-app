@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { initialTodos } from "./initialTodos";
-import { TodoList } from "./TodoList";
+import { TodoList } from "./components/TodoList";
 import { AddTodoForm } from "./AddTodoForm";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
 
-  const toggleComplete: ToggleComplete = selectedTodo => {
-    const updatedTodos = todos.map(todo => {
+  const toggleComplete: ToggleComplete = (selectedTodo) => {
+    const updatedTodos = todos.map((todo) => {
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
       }
@@ -16,7 +16,7 @@ const App: React.FC = () => {
     setTodos(updatedTodos);
   };
 
-  const addTodo: AddTodo = newTodo => {
+  const addTodo: AddTodo = (newTodo) => {
     newTodo.trim() !== "" &&
       setTodos([...todos, { text: newTodo, complete: false }]);
   };

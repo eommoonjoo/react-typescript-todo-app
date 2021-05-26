@@ -6,10 +6,7 @@ interface TodoListItemProps {
   toggleComplete: ToggleComplete;
 }
 
-export const TodoListItem: React.FC<TodoListItemProps> = ({
-  todo,
-  toggleComplete
-}) => {
+export const TodoListItem = ({ todo, toggleComplete }: TodoListItemProps) => {
   return (
     <li>
       <label className={todo.complete ? "complete" : undefined}>

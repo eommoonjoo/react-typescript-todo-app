@@ -3,6 +3,10 @@ type Todo = {
   complete: boolean;
 };
 
-type ToggleComplete = (selectedTodo: Todo) => void;
+// type ToggleComplete = (selectedTodo: Todo) => void;
+
+interface ToggleComplete {
+  (selectedTodo: Todo): void;
+}
 
 type AddTodo = (newTodo: string) => void;
